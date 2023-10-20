@@ -10,15 +10,43 @@
   
 </head>
 <body>
-  <div>
+  <div class="container">
     <h1>JSON Tree Viewer</h1>
     <span>Simple JSON Viewer that runs completely on-client. No data exchange </span>
-    <label class="fileLabel" >
-      Load JSON
-      <input type="file" name="inputJson" id="inputJson" accept="application/json" >
-    </label>
+    <form  id="inputJson">
+      <label class="fileLabel" >
+        Load JSON
+        <input type="file" name="inputJson" id="inputJson" accept="application/json" >
+      </label>
+    </form>
+    <span class="errorJson" id="errorJson" >Invalid file. Please load a valid JSON file.</span>
 
   </div>
-  <script src="./script.js"></script>
+  <script >
+
+    const input = document.querySelector("input[type=file]");
+
+
+    const zicaBrab = input.addEventListener("change", (event) => {
+      const reader = new FileReader()
+      reader.readAsText(event.target.files[0])
+        reader.onload = () => {
+        try{
+          const data = JSON.parse(reader.result);
+          return data;
+        }catch{
+          const errorElement = document.createElement("div");
+          errorElement.innerHTML = "Error";
+          const errorLabel = document.getElementById("errorJson").style.visibility = "visible";
+          return
+
+        }
+
+      }
+
+    })
+
+
+  </script>
 </body>
 </html>

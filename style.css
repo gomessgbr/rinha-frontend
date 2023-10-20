@@ -28,8 +28,19 @@ body{
   padding: 0.375em 0.75em;
   background: linear-gradient(#E4E4E4,#F7F7F7 );
   border-radius: 5px;
+  cursor:pointer;
+  width: fit-content;
+  
   > input[type="file"]{
     background-color:#fff;
     display:none;
   }
+}
+
+.errorJson{
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight:400;
+  color: #BF0E0E;
+  visibility: hidden;
 }
