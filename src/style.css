@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  > div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    gap: 24px;
+    place-items: center;
+
+    > h1 {
+      text-align: center;
+    }
+  }
+}
+
+.fileLabel {
+  border: 1px solid #000;
+  font-size: 16px;
+  padding: 0.375em 0.75em;
+  background: linear-gradient(#e4e4e4, #f7f7f7);
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+
+  > input[type="file"] {
+    background-color: #fff;
+    display: none;
+  }
+}
+
+.errorJson {
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 400;
+  color: #bf0e0e;
+  visibility: hidden;
+}

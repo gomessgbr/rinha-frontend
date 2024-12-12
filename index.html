@@ -1,52 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  
-  <title>Rinha de Front End</title>
-  
-</head>
-<body>
-  <div class="container">
-    <h1>JSON Tree Viewer</h1>
-    <span>Simple JSON Viewer that runs completely on-client. No data exchange </span>
-    <form  id="inputJson">
-      <label class="fileLabel" >
-        Load JSON
-        <input type="file" name="inputJson" id="inputJson" accept="application/json" >
-      </label>
-    </form>
-    <span class="errorJson" id="errorJson" >Invalid file. Please load a valid JSON file.</span>
-
-  </div>
-  <script >
-
-    const input = document.querySelector("input[type=file]");
-
-
-    const zicaBrab = input.addEventListener("change", (event) => {
-      const reader = new FileReader()
-      reader.readAsText(event.target.files[0])
-        reader.onload = () => {
-        try{
-          const data = JSON.parse(reader.result);
-          return data;
-        }catch{
-          const errorElement = document.createElement("div");
-          errorElement.innerHTML = "Error";
-          const errorLabel = document.getElementById("errorJson").style.visibility = "visible";
-          return
-
-        }
-
-      }
-
-    })
-
-
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+     
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
